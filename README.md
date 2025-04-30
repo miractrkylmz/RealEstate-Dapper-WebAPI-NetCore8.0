@@ -67,8 +67,18 @@ Bu projenin yazılım alanında kendimi geliştirdiğim bu süreçte bana çok �
 ---
 
 ## 📷 Projeden Bazı Görseller
-`![DbDiagram](RealEstate_Dapper_UI/wwwroot/ProjectScreenShots/agentPanelLocations.png)` 
-`![MainPage](RealEstate_Dapper_UI/wwwroot/ProjectScreenShots/dbDiagram.png)`  
-`![PropertiesPage](RealEstate_Dapper_UI/wwwroot/ProjectScreenShots/propertiesPage.png)`  
-`![PropertyDetails](RealEstate_Dapper_UI/wwwroot/ProjectScreenShots/propertyDetails.png)`
-`![AgentPanel](RealEstate_Dapper_UI/wwwroot/ProjectScreenShots/propertyDetails.png)`
+
+### 🏠 Ana Sayfa
+![MainPageTop](https://raw.githubusercontent.com/miractrkylmz/RealEstate-Dapper-WebAPI-NetCore8.0/master/RealEstate_Dapper_UI/wwwroot/ProjectScreenShots/mainPageTop.png)
+
+### 🧭 Emlakçı Paneli Lokasyonlar Sayfası
+![Agent Panel Locations](https://raw.githubusercontent.com/miractrkylmz/RealEstate-Dapper-WebAPI-NetCore8.0/master/RealEstate_Dapper_UI/wwwroot/ProjectScreenShots/agentPanelLocations.png)
+
+### 🗂️ Veritabanı Diyagramı
+![Db Diagram](https://raw.githubusercontent.com/miractrkylmz/RealEstate-Dapper-WebAPI-NetCore8.0/master/RealEstate_Dapper_UI/wwwroot/ProjectScreenShots/dbDiagram.png)
+
+### 🏘️ İlanlar Sayfası
+![Properties Page](https://raw.githubusercontent.com/miractrkylmz/RealEstate-Dapper-WebAPI-NetCore8.0/master/RealEstate_Dapper_UI/wwwroot/ProjectScreenShots/propertiesPage.png)
+
+### 📝 Detay Sayfası
+![Property Details](https://raw.githubusercontent.com/miractrkylmz/RealEstate-Dapper-WebAPI-NetCore8.0/master/RealEstate_Dapper_UI/wwwroot/ProjectScreenShots/propertyDetails.png)
