@@ -1,0 +1,57 @@
+﻿@model List<RealEstate_Dapper_UI.DTOs.MessageDTOs.ResultInboxMessageDto>
+
+
+<div class="nav-item dropdown">
+    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+        <i class="fa fa-envelope me-lg-2"></i>
+        <span class="d-none d-lg-inline-flex">Mesajlar</span>
+    </a>
+    <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+        @foreach (var item in Model)
+        {
+            <a href="#" class="dropdown-item">
+                <div class="d-flex align-items-center">
+                    <img class="rounded-circle" src="@item.UserImageUrl" alt="" style="width: 40px; height: 40px;">
+                    <div class="ms-2">
+                        <h6 class="fw-normal mb-0">@item.Name sana bir mesaj gönderdi.</h6>
+                        <small>
+                            @{
+                                string gunsuresi;
+
+                                TimeSpan gunfarkı = DateTime.Now - item.SendDate;
+
+                                if (gunfarkı.Days < 1)
+                                {
+                                    // Eğer 1 gün içinde ise
+                                    if (gunfarkı.Hours < 1)
+                                    {
+                                        gunsuresi = $"{gunfarkı.Minutes} dakika önce";
+                                    }
+                                    else
+                                    {
+                                        gunsuresi = $"{gunfarkı.Hours} saat önce";
+                                    }
+                                }
+                                else if (gunfarkı.Days < 30)
+                                {
+                                    // Eğer 1 günden az 30 güne kadar ise
+                                    gunsuresi = $"{gunfarkı.Days} gün önce";
+                                }
+                                else
+                                {
+                                    // Eğer 30 günden fazla ise
+                                    int fark = gunfarkı.Days / 30;
+                                    gunsuresi = $"{fark} ay önce";
+                                }
+                                
+                            }
+                            @gunsuresi
+                        </small>
+                    </div>
+                </div>
+            </a>
+            <hr class="dropdown-divider">
+        }
+        <a href="#" class="dropdown-item text-center">Tüm Mesajlar</a>
+    </div>
+</div>

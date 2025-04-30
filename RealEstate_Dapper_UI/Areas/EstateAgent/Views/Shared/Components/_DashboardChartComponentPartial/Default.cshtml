@@ -1,0 +1,93 @@
+﻿@model List<ResultEstateAgentDashboardChartDTO>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+@{
+    var cityLabels = string.Join(",", Model.Select(x => $"\"{x.City}\""));
+    var cityCounts = string.Join(",", Model.Select(x => x.CityCount));
+}
+
+<style>
+    .chart-container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .chart-box {
+        width: 100%;
+        max-width: 500px;
+    }
+</style>
+
+<div class="chart-container">
+    <div class="chart-box">
+        <canvas id="myChart" style="width:100%;max-width:500px"></canvas>
+    </div>
+    <div class="chart-box">
+        <canvas id="myChart1" style="width:100%;max-width:500px"></canvas>
+    </div>
+</div>
+
+<script>
+    const xValues = [@Html.Raw(cityLabels)];
+    const yValues = [@Html.Raw(cityCounts)];
+    const barColors = ["#3A59D1", "#3D90D7", "#7AC6D2", "#B5FCCD", "#B5FCCD", "#E2C2F1", "#FFCEB6"]; // gerekirse renkleri çoğalt
+
+    new Chart("myChart", {
+        type: "bar",
+        data: {
+            labels: xValues,
+            datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+            }]
+        },
+        options: {
+            legend: { display: false },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            },
+            title: {
+                display: true,
+                text: "Şehir-İlan İstatistiği"
+            }
+        }
+    });
+</script>
+
+<script>
+    const xValues1 = [@Html.Raw(cityLabels)];
+    const yValues1 = [@Html.Raw(cityCounts)];
+    const barColors1 = ["#3A59D1", "#3D90D7", "#7AC6D2", "#B5FCCD", "#B5FCCD", "#E2C2F1", "#FFCEB6"]; // gerekirse renkleri çoğalt
+
+    new Chart("myChart1", {
+        type: "bar",
+        data: {
+            labels: xValues1,
+            datasets: [{
+                backgroundColor: barColors1,
+                data: yValues1
+            }]
+        },
+        options: {
+            legend: { display: false },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            },
+            title: {
+                display: true,
+                text: "Şehir-İlan İstatistiği"
+            }
+        }
+    });
+</script>

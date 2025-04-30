@@ -1,0 +1,21 @@
+﻿using RealEstate_Dapper_UI.Areas.Default.Slugify;
+
+namespace RealEstate_Dapper_UI.DTOs.ProductDTOs
+{
+    public class ResultProductDTO
+    {
+        public int id { get; set; }
+        public string title { get; set; }
+        public decimal price { get; set; }
+        public string CoverImage { get; set; }
+        public string city { get; set; }
+        public string district { get; set; }
+        public string adress { get; set; }
+        public string SlugUrl => title.Slugify();
+        public string type { get; set; }
+        public string description { get; set; }
+        public bool dealOfTheDay { get; set; }
+        public string categoryName { get; set; }
+        public DateTime ProductDate { get; set; }
+    }
+}

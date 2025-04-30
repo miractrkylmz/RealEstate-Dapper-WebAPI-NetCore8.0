@@ -1,0 +1,65 @@
+﻿@model List<RealEstate_Dapper_UI.DTOs.ProductDTOs.ResultProductDTO>
+
+<section class="locations-1" id="locations">
+    <div class="locations py-5">
+        <div class="container py-lg-5 py-md-4 py-2">
+            <div class="heading text-center mx-auto">
+                <h3 class="title-big fw-bold text-dark">Günün Favori İlanları</h3>
+            </div>
+            <div class="row pt-md-5 pt-4">
+                @foreach (var item in Model)
+                {
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <a href="property-single.html" class="text-decoration-none">
+                            <div class="card property-card border-0 shadow-sm">
+                                <div class="rentext-listing-category position-absolute">
+                                    <span class="badge bg-primary">@item.type</span>
+                                    <span class="badge bg-secondary">@item.categoryName</span>
+                                </div>
+                                <img src="@item.CoverImage" class="card-img-top property-image" alt="Property Image">
+                                <div class="card-body">
+                                    <h5 class="card-title text-primary fw-bold">@item.price₺</h5>
+                                    <p class="card-text text-muted">
+                                        <i class="bi bi-geo-alt-fill"></i> @item.adress
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .property-card {
+        border-radius: 15px;
+        overflow: hidden;
+        transition: transform 0.3s ease-in-out;
+    }
+
+        .property-card:hover {
+            transform: scale(1.05);
+        }
+
+    .property-image {
+        height: 250px;
+        object-fit: cover;
+    }
+
+    .rentext-listing-category {
+        top: 10px;
+        left: 10px;
+    }
+
+        .rentext-listing-category .badge {
+            font-size: 0.8rem;
+            margin-right: 5px;
+        }
+
+    .card-body {
+        padding: 1rem;
+        text-align: center;
+    }
+</style>

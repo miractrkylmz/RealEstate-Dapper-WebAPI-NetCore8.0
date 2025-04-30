@@ -1,0 +1,68 @@
+﻿@using Microsoft.AspNetCore.SignalR
+@{
+    ViewData["Title"] = "Index";
+}
+
+<script src="~/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
+
+@section Scripts
+{
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <script type="text/javascript">
+                            $(document).ready(()=>{
+                                var connection=new signalR.HubConnectionBuilder()
+                                               .withUrl("https://localhost:44316/SignalRHub")
+                                               .build();
+                                $("#connstatus").text(connection.state);
+
+                                connection.start().then(()=>{
+                                       $("#connstatus").text(connection.state);
+                                       setInterval(()=>{
+                                               connection.invoke("SendCategoryCount");
+                                       },1000);
+                                }).catch((err)=>{console.log(err)});
+
+
+                                connection.on("ReceiveCategoryCount",(value)=>{
+                                    $("#categorycount").text(value);
+                                });
+
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card text-center shadow-lg">
+            <div class="card-header bg-info text-white">
+                <h5 class="mb-0">SignalR Bağlantı Durumu</h5>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-dismissible fade show" id="connstatusalert" role="alert">
+                    <strong>Status: </strong><span id="connstatus">Bağlantı sağlanıyor...</span>
+                </div>
+                <div id="connicon" class="my-4">
+                    <i class="fas fa-spinner fa-spin fa-3x text-primary"></i>
+                </div>
+
+                <div class="alert alert-dismissible fade show" id="connstatusalert" role="alert">
+                    <strong>Kategori Sayısı: </strong><span id="categorycount">Bağlantı sağlanıyor...</span>
+                </div>
+
+                <p class="text-muted">Bağlantı durumu, aktif olduğu sürece gerçek zamanlı olarak güncellenir.</p>
+            </div>
+            <div class="card-footer text-muted">
+                SignalR ile anlık veriler iletmek için bağlantınızı kontrol edin.
+            </div>
+        </div>
+    </div>
+</div>
