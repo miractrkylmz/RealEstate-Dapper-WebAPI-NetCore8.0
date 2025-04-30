@@ -70,6 +70,7 @@ Bu projenin yazılım alanında kendimi geliştirdiğim bu süreçte bana çok �
 
 ### 🏠 Ana Sayfa
 ![MainPageTop](https://raw.githubusercontent.com/miractrkylmz/RealEstate-Dapper-WebAPI-NetCore8.0/master/RealEstate_Dapper_UI/wwwroot/ProjectScreenShots/mainPageTop.png)
+![MainPage](https://raw.githubusercontent.com/miractrkylmz/RealEstate-Dapper-WebAPI-NetCore8.0/master/RealEstate_Dapper_UI/wwwroot/ProjectScreenShots/MainPage.png)
 
 ### 🧭 Emlakçı Paneli Lokasyonlar Sayfası
 ![Agent Panel Locations](https://raw.githubusercontent.com/miractrkylmz/RealEstate-Dapper-WebAPI-NetCore8.0/master/RealEstate_Dapper_UI/wwwroot/ProjectScreenShots/agentPanelLocations.png)
