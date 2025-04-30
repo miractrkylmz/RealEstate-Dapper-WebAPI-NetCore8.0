@@ -9,7 +9,27 @@
             <div class="row pt-md-5 pt-4">
                 @foreach (var item in Model)
                 {
-                    <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="col-lg-4 col-md-6">
+                        <a href="property-single.html">
+                            <div class="box16">
+                                <div class="rentext-listing-category"><span>@item.type</span><span>@item.categoryName</span></div>
+                                <img class="img-fluid" src="@item.CoverImage" alt="">
+                                <div class="box-content">
+                                    <h3 class="title">@item.price₺</h3>
+                                    <span class="post">@item.adress</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+@* <div class="col-lg-4 col-md-6 mb-4">
                         <a href="property-single.html" class="text-decoration-none">
                             <div class="card property-card border-0 shadow-sm">
                                 <div class="rentext-listing-category position-absolute">
@@ -25,12 +45,7 @@
                                 </div>
                             </div>
                         </a>
-                    </div>
-                }
-            </div>
-        </div>
-    </div>
-</section>
+                    </div> *@
 
 <style>
     .property-card {
