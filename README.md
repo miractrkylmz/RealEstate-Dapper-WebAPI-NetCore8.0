@@ -8,6 +8,9 @@ Kullanıcılar sisteme kayıt olduktan sonra otomatik olarak **Emlakçı rolü**
 
 **Back-End** tarafı tamamen **.NET 8.0 Web API** ile geliştirilmiş ve bu API, **Front-End** tarafında bir **MVC projesi** içerisinde tüketilmiştir. Veritabanı işlemlerinde **Dapper ORM** tercih edilmiştir.
 
+Bu projenin yazılım alanında kendimi geliştirdiğim bu süreçte bana çok şey kattığını söyleyebilirim. Yeni teknolojiler, teorik bilgiler ve genel .Net çevresiyle alakalı çok kıymetli bilgiler ve tecrübe edindim. 
+
+**Proje Hakkında Detaylı Bilgiler**
 ---
 
 ## 🧰 Kullanılan Teknolojiler
@@ -64,3 +67,4 @@ Kullanıcılar sisteme kayıt olduktan sonra otomatik olarak **Emlakçı rolü**
 ---
 
 ## 📷 Projeden Görseller
+(Görseller eklenecek)
